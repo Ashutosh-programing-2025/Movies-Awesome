@@ -10,6 +10,7 @@ const api = axios.create({
   },
 });
 
+
 export const getApiData = async (value,page=1) => {
   const response = await api.get(`/search/movie?query=${value}&page=${page}`, {
   });
