@@ -1,6 +1,6 @@
 {
   "name": "movies-world",
-  "homepage": "https://Ashutosh-programing.github.io/Movies-Awesome/",
+  "homepage": "https://Ashutosh-programing-2025.github.io/Movies-Awesome/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.80.7",
