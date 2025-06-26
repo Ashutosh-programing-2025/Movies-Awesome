@@ -8,6 +8,8 @@ import Home from './Pages/Home'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import IndividualCard from './components/UI/IndividualCard'
 import TvShows from "./Pages/TvShows";
+import Sports from "./Pages/Sports";
+import Movies from "./Pages/Sports";
 
 function App() {
   const queryClient = new QueryClient();
@@ -27,7 +29,11 @@ function App() {
           {
             path:'/:id',
             element:<IndividualCard/>
-          }
+          },
+          {
+            path:'/movies',
+            element:<Movies/>
+          },
         ]
       }
     ])

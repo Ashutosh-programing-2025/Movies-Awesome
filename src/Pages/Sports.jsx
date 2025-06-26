@@ -7,9 +7,9 @@ import { PiCaretDoubleRight } from "react-icons/pi";
 import { FaRegStar } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 
-const Movies = () => {
+const Home = () => {
   const { register, handleSubmit } = useForm();
-  const [value, setValue] = useState("marvel");
+  const [value, setValue] = useState("avengers");
   const [value2, setValue2] = useState("justice league");
   const [page, setPage] = useState(1);
   const [page2, setPage2] = useState(1);
@@ -62,9 +62,9 @@ const Movies = () => {
   };
 
   return (
-    <div className="bg-black text-white px-6 ">
-      <div className="spacing-txt w-full mt-4 mb-4 flex justify-center">
-        <div className="Title text-lg text  flex items-center flex-wrap max-[670px]:text-sm max-[460px]:flex-col justify-between w-5/6 max-[1275px]:w-full max-[1099px]:w-full text-custom-yellow">
+    <div className="bg-black text-white max-[1099px]:px-10">
+      <div className="spacing-txt w-full mt-7 mb-10 flex justify-center">
+        <div className="Title text-lg text  flex items-center flex-wrap max-[550px]:text-sm max-[550px]: justify-between w-5/6 max-[1275px]:w-full max-[1099px]:w-full text-custom-yellow">
           <div>Movies</div>
           <div className="search flex gap-2 text-2xl items-center w-auto justify-center border py-2 px-3 border-red-400 rounded-lg">
             <div className="flex items-center justify-center rounded-lg">
@@ -88,7 +88,7 @@ const Movies = () => {
         </div>
       </div>
       <div className=" flex items-center flex-col justify-center">
-        <div className="spacing-txt w-full mb-4 ">
+        <div className="spacing-txt w-full mb-4 max-w-4xl min-[1132px]:max-w-6xl max-[840px]:max-w-4xl max-[823px]:max-w-xl">
           <div className="heading text-custom-yellow w-full px-4 flex flex-col">
             <div className="first-letter font-bold text-xl sm:text-2xl md:text-3xl flex relative items-center gap-3">
               Popular Interests <PiCaretDoubleRight size={20} />
@@ -98,11 +98,11 @@ const Movies = () => {
             </div>
           </div>
         </div>
-        <div className="home-container flex items-center gap-4 w-full overflow-scroll ">
+        <div className="home-container grid grid-cols-4 max-[1136px]:grid-cols-3 max-[890px]:grid-cols-2 max-[607px]:grid-cols-1 gap-7 ">
           {data1?.map((e) => {
             return (
               <NavLink key={e.id} to={`/${e.id}`}>
-                <div className="flex flex-col h-96 w-64 overflow-scroll items-center bg-custom-header-bg rounded-md gap-2 p-3 justify-center">
+                <div className="flex flex-col h-96 w-64 items-center overflow-hidden bg-custom-header-bg rounded-md hover:overflow-hidden duration-300 gap-2 max-[607px]:w-full p-3 justify-center shadow-xl shadow-red-600">
                   <img
                     className="h-52 w-40 sm:hover:h-60 sm:hover:w-52 duration-300"
                     src={`https://image.tmdb.org/t/p/w342${e.poster_path}`}
@@ -120,7 +120,7 @@ const Movies = () => {
             );
           })}
         </div>
-        <div className="pagination flex gap-4 items-center relative w-full justify-center mt-9">
+        <div className="pagination flex gap-4 items-center relative w-4/6 mt-9">
           <button
             disabled={page === 1}
             onClick={() => setPage(page - 1)}
@@ -138,7 +138,7 @@ const Movies = () => {
             +
           </button>
         </div>
-        <div className="spacing-txt w-full mt-7 mb-4 ">
+        <div className="spacing-txt w-full mt-24 mb-4 max-w-4xl min-[1132px]:max-w-6xl max-[840px]:max-w-4xl max-[823px]:max-w-xl">
           <div className="heading text-custom-yellow w-full px-4 flex flex-col">
             <div className="first-letter font-bold text-xl sm:text-2xl md:text-3xl flex relative items-center gap-3">
               Popular Movies <PiCaretDoubleRight size={20} />
@@ -148,26 +148,26 @@ const Movies = () => {
             </div>
           </div>
         </div>
-        <div className="home-container2 flex items-center gap-4 w-full overflow-scroll ">
+        <div className="home-container2 grid grid-cols-4 max-[1100px]:grid-cols-3 max-[830px]:grid-cols-2 max-[580px]:grid-cols-1 gap-7 ">
           {data2 &&
             data2.map((e) => {
               return (
-                              <NavLink key={e.id} to={`/${e.id}`}>
-                <div className="flex flex-col h-96 w-64 overflow-scroll items-center bg-custom-header-bg rounded-md duration-300 gap-2 p-3 justify-center">
-                  <img
-                    className="h-52 w-40 sm:hover:h-60 sm:hover:w-52 duration-300"
-                    src={`https://image.tmdb.org/t/p/w342${e.poster_path}`}
-                    alt="no photos"
-                  />
-                  <div className="rating flex gap-2 items-center ">
-                    <FaRegStar className=" text-custom-yellow" />{" "}
-                    <p className=" text-white">{e.vote_average}</p>
+                <NavLink key={e.id} to={`/${e.id}`}>
+                  <div className="flex flex-col h-96 w-64 items-center overflow-hidden bg-custom-header-bg rounded-md hover:overflow-hidden hover:absolute duration-300 gap-2 max-[580px]:w-full p-3 justify-center shadow-xl shadow-red-600">
+                    <img
+                      className="h-52 w-40 hover:h-60 hover:w-52 duration-300"
+                      src={`https://image.tmdb.org/t/p/w342${e.poster_path}`}
+                      alt="no photos"
+                    />
+                    <div className="rating flex gap-2 items-center ">
+                      <FaRegStar className=" text-custom-yellow" />{" "}
+                      <p className=" text-white">{e.vote_average}</p>
+                    </div>
+                    <div className="title text-lg text-ellipsis text-center bg-custom-header-bg ">
+                      {e.original_title}
+                    </div>
                   </div>
-                  <div className="title text-lg text-ellipsis text-center bg-custom-header-bg ">
-                    {e.original_title}
-                  </div>
-                </div>
-              </NavLink>
+                </NavLink>
               );
             })}
         </div>
@@ -176,4 +176,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default Home;

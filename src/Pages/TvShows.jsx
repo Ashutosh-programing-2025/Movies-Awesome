@@ -45,8 +45,8 @@ const onsubmit = (data)=>{
   },1000)
 }
   return (
-     <div>
-      <div className="Title text-lg text flex items-center mt-7 flex-wrap max-[550px]:text-sm max-[755px]:flex-col justify-between w-3/5 mb-10 mx-auto text-custom-yellow">
+     <div className=' max-[580px]:px-7'>
+      <div className="Title text-lg text flex items-center mt-7 flex-wrap max-[550px]:text-sm max-[755px]:flex-col max-[580px]:w-full justify-between w-3/5 mb-10 mx-auto text-custom-yellow">
         <div>Tv Shows</div>
         <div onClick={()=>setOpen(1)} className="sorting flex items-center justify-center cursor-pointer z-20">Sort <BiCaretDown /></div>
         {open == 1 && <div onClick={()=>setOpen(0)} className="backdrop absolute top-0 left-0 w-screen h-screen z-10 opacity-25 bg-slate-950"></div>}
@@ -81,7 +81,7 @@ const onsubmit = (data)=>{
                 return(
                     <NavLink key={e.id} to={`/${e.id}`}>
                     <div className="flex flex-col h-96 w-64 items-center gap-2 max-[580px]:w-full bg-custom-header-bg text-white p-3 justify-center shadow-xl shadow-red-600">
-                            <img className="h-52 w-40  hover:h-60 hover:w-52 duration-300" src={e.poster_path?`https://image.tmdb.org/t/p/w342${e.poster_path}`:{noImg}} alt={e.name} />
+                            <img className="h-52 w-40  sm:hover:h-60 sm:hover:w-52 duration-300" src={e.poster_path?`https://image.tmdb.org/t/p/w342${e.poster_path}`:{noImg}} alt={e.name} />
                             <div className="rating flex gap-2 items-center "><FaRegStar className=" text-custom-yellow"/> <p className=" text-white">{e.vote_average}</p></div>
                             <div className="title text-lg bg-custom-header-bg text-white">{e.name}</div>
                     </div>

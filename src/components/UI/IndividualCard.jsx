@@ -26,23 +26,23 @@ const IndividualCard = () => {
   if (error) return <p>Error: {error.message}</p>;
   return (
     <div>
-      <div className="main-container flex flex-col h-screen w-screen justify-center items-center gap-6">
+      <div className="main-container flex flex-col h-screen w-screen justify-center overflow-scroll mt-4 items-center gap-6">
         <div className="heading text-2xl text-custom-yellow">Movies Details</div>
         {
-          <div className="container-ind-cards h-2/3 gap-3 flex justify-center items-center bg-custom-header-bg w-2/3 text-white shadow-2xl shadow-red-600">
-            <img className="img  h-96 w-96" src={`https://image.tmdb.org/t/p/w342${data.poster_path}`} alt="" />
-            <div className="cont-2 flex flex-col gap-2 bg-custom-header-bg">
-            <div className="">Movie: {data.original_title}</div>
-            <div>Language :{data.original_language}</div>
-            <div>popularity :{data.popularity}</div>
-            <div>Year :{data.release_date}</div>
-            <div>Vote :{data.vote_average}</div>
-            <div>revenue :{data.revenue}</div>
-            <div>tagline :{data.tagline}</div>
-            <div>status :{data.status}</div>
-            <div>runtime :{data.runtime} min</div>
-            <div>budget :{data.budget} USD</div>
-            <div>overview :{data.overview}</div>
+          <div className="container-ind-cards h-2/3 gap-3 flex justify-center max-[740px]:flex-col items-center max-[940px]:text-sm bg-custom-header-bg w-2/3 max-[740px]:h-full max-[740px]:w-5/6 text-white shadow-2xl shadow-red-600">
+            <img className="img max-[740px]:h-80 max-[740px]:w-80 h-96 w-96 max-[400px]:w-full max-[400px]:h-40" src={`https://image.tmdb.org/t/p/w342${data.poster_path}`} alt="" />
+            <div className="cont-2 flex flex-col px-2 gap-2 bg-custom-header-bg">
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Title :</div>{data.original_title}</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Language :</div>{data.original_language}</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Popularity :</div>{data.popularity}</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Year :</div>{data.release_date}</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Vote :</div>{data.vote_average}</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Revenue :</div>{data.revenue}</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Tagline :</div>{data.tagline}</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Status :</div>{data.status}</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Runtime :</div>{data.runtime} min</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Budget :</div>{data.budget} USD</div>
+            <div className="flex items-center gap-2"><div className="text-custom-yellow">Overview </div>{data.overview}</div>
             </div>
           </div>
         }
